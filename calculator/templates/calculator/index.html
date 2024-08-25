@@ -9,8 +9,8 @@
 
     
 </head>
-<body>
-    <div id="vanta-bg">
+<body id="vanta-bg">
+
         <div class="container">
             <h1>Simple Calculator</h1>
             <form id="calcForm">
@@ -19,15 +19,30 @@
                 <input type="number" id="num2" placeholder="Enter second number" required>
                 <button type="submit">Calculate</button>
             </form>
+            <br/>
             <div id="sumResult"></div>
             <div id="primeResult"></div>
             <div id="result"></div>
             
         </div>
-    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+
     <script src="{% static 'calculator/script.js' %}"></script>
 
-    
+    <script>
+        VANTA.BIRDS({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00
+        })
+        </script>
 </body>
 </html>
 

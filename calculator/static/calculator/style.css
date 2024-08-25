@@ -13,17 +13,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden; /* Prevent scrolling for Vanta animation */
 }
 
 /* Container for centering content */
 .container {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for better effect */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
+    position: relative; /* For layering above Vanta */
+    z-index: 1;
 }
 
 /* Style the heading */
@@ -53,11 +56,17 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+    transform: scale(0.98); /* Slightly reduce size on click */
 }
 
 /* Style the result paragraph */
@@ -88,10 +97,6 @@ button:hover {
     }
 }
 
-button:active {
-    background-color: #004085;
-}
-
 input[type="number"]:focus {
     border-color: #007bff;
     outline: none;
@@ -103,5 +108,3 @@ input[type="number"]:focus {
     font-weight: bold;
     margin-top: 10px;
 }
-
-
