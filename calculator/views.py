@@ -15,4 +15,11 @@ def is_prime(num):
             return False
     return True
 
+def next_prime(num) :
+    # finds the next prime number greater than the given number
+    prime = num + 1
+    while not is_prime(prime):
+        prime += 1
+    return prime
+
 
