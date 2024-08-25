@@ -1,5 +1,5 @@
 # Simple Calculator Web Application
-
+![Alt text](demo.gif) / ![](demo.gif)
 ## Overview
 This project is a simple web application that performs a basic arithmetic operation. Users can input two numbers, and the application will calculate the sum of those numbers and add the first prime number greater than the larger of the two inputs. The result is displayed on a user-friendly web page.
 
