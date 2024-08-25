@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import math
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 # create helper functions
@@ -22,6 +23,7 @@ def next_prime(num) :
         prime += 1
     return prime
 
+@csrf_exempt
 def calculate(request):
     # handles the POST request to Perform calculations
     if request.method == "POST":
