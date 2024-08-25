@@ -53,7 +53,7 @@ To set up this project on your local machine, follow these steps:
 To run the application, use the following command, then open your web browser and navigate to http://127.0.0.1:8000/ to access the application:
 
     ```bash
-    python manage.py runserver
+    python3 manage.py runserver
 
 
 
