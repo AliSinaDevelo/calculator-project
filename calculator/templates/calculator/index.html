@@ -6,42 +6,28 @@
     <title>Simple Calculator</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'calculator/style.css' %}">
-    <script>
-        function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                const cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                    const cookie = cookies[i].trim();
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('CSRF Token:', getCookie('csrftoken'));
-        });
-    </script>
+    
 </head>
 <body>
-    <div class="container">
-        <h1>Simple Calculator</h1>
-        <form id="calcForm">
-          {% csrf_token %}
-            <input type="number" id="num1" placeholder="Enter first number" required>
-            <input type="number" id="num2" placeholder="Enter second number" required>
-            <button type="submit">Calculate</button>
-        </form>
-        <div id="result">
-          <p id="sumResult"></p>
-          <p id="primeResult"></p>
+    <div id="vanta-bg">
+        <div class="container">
+            <h1>Simple Calculator</h1>
+            <form id="calcForm">
+            {% csrf_token %}
+                <input type="number" id="num1" placeholder="Enter first number" required>
+                <input type="number" id="num2" placeholder="Enter second number" required>
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="result">
+                <p id="sumResult"></p>
+                <p id="primeResult"></p>
+            </div>
         </div>
     </div>
     <script src="{% static 'calculator/script.js' %}"></script>
+
+    
 </body>
 </html>
 
