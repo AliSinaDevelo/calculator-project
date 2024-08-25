@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import calculate
+from .views import calculate, index
 
 # det URL routing so that the view cam be accessed from the frontend
 urlpatterns = [
-    path('calculate/', calculate, name='calculate'),
-    path('', index, name='index'), 
+    
+    path('', index, name='index'), # index endpoint
+    path('calculate/', calculate, name='calculate'), # calculate endpoint
+   
 ]
 

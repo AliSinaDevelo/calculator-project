@@ -53,6 +53,4 @@ def calculate(request):
 
 
 def index(request):
-    # renders the index page
-    return render(request, 'index.html')
-
+    return render(request, 'calculator/index.html')

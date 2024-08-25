@@ -1,3 +1,5 @@
+
+
 document.getElementById('calcForm').addEventListener('submit', async function(e) {
   // Prevent default from submission
   e.preventDefault(); 
