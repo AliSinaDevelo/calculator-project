@@ -14,6 +14,8 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
 
   // prep POST data
   let fromData = new URLSearchParams();
+  // DEBUG : console.log('Form data:', fromData.toString());
+
   fromData.append('num1', num1);
   fromData.append('num2', num2);
 
@@ -31,6 +33,7 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
     // Parse Json
     let data = await response.json();
 
+
     // print result
     if (response.ok) {
       let sum = data.total_sum;
@@ -38,8 +41,8 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
       let finalResult = data.result;
             
       // Update the HTML with detailed results
-      document.getElementById('sumResult').innerText = `Sum of the numbers: ${sum}`;
-      document.getElementById('primeResult').innerText = `Next prime number greater than the larger number: ${nextPrime}`;
+      document.getElementById('sumResult').innerHTML = `Sum of the numbers: ${Number(sum)}`;
+      document.getElementById('primeResult').innerHTML = `Next prime number greater than the larger number: ${nextPrime}`;
       document.getElementById('result').innerHTML = `Result: ${finalResult}`;
     } else {
       document.getElementById('result').innerHTML = 'Error: ' + data.error;

@@ -6,6 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 # create helper functions
 
+def total_sum(num1, num2):
+    return num1 + num2 
+
 def is_prime(num):
     # checks if a number is prime
     if num < 2:
@@ -33,7 +36,7 @@ def calculate(request):
             num2 = int(request.POST.get('num2'))
 
             # calculate the sum
-            total_sum = num1 + num2
+            sum = total_sum(num1, num2)
 
             # find the maximum number
             greater_num = max(num1, num2)
@@ -42,10 +45,10 @@ def calculate(request):
             prime = next_prime(greater_num)
 
             # add the prime number to the sum
-            result = total_sum + prime
+            result = sum + prime
 
             # return the result as a JSON response
-            return JsonResponse({'result': result, 'total_sum': total_sum, 'next_prime': prime})
+            return JsonResponse({'result': result, 'total_sum': sum, 'next_prime': prime})
         except(ValueError, TypeError):
             return JsonResponse({'error': 'Invalid Input'}, status=400)
     else:
