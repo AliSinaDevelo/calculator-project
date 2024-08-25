@@ -19,7 +19,7 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'X-CSRFToken': getCookie('csrftoken') // add CSRF token
+        'X-CSRFToken': getCookie('csrftoken')
       },
       body: fromData
     });
@@ -29,6 +29,12 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
 
     // print result
     if (response.ok) {
+      let sum = data.sum;
+      let nextPrime = data.next_prime;
+            
+      // Update the HTML with detailed results
+      document.getElementById('sumResult').innerText = `Sum of the numbers: ${sum}`;
+      document.getElementById('primeResult').innerText = `Next prime number greater than the larger number: ${nextPrime}`;
       document.getElementById('result').innerHTML = 'Result: ' + data.result;
     } else {
       document.getElementById('result').innerHTML = 'Error: ' + data.error;
@@ -36,13 +42,12 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
   } catch (error) {
     console.error('Error:', error);
   }
-}
+});
 
 // Get CSRF token from cookie
 // add csrf token using the function below
 function getCookie(name) {
   let cookieValue = null;
-  
   if (document.cookie && document.cookie !== '') {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
