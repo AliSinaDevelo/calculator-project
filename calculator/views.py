@@ -45,7 +45,7 @@ def calculate(request):
             result = total_sum + prime
 
             # return the result as a JSON response
-            return JsonResponse({'result': result})
+            return JsonResponse({'result': result, 'total_sum': total_sum, 'next_prime': prime})
         except(ValueError, TypeError):
             return JsonResponse({'error': 'Invalid Input'}, status=400)
     else:

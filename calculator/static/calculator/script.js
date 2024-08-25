@@ -8,6 +8,10 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
   let num1 = document.getElementById('num1').value;
   let num2 = document.getElementById('num2').value;
 
+  // convert input val to Number
+  num1 = Number(num1);
+  num2 = Number(num2);
+
   // prep POST data
   let fromData = new URLSearchParams();
   fromData.append('num1', num1);
@@ -29,13 +33,14 @@ document.getElementById('calcForm').addEventListener('submit', async function(e)
 
     // print result
     if (response.ok) {
-      let sum = data.sum;
+      let sum = data.total_sum;
       let nextPrime = data.next_prime;
+      let finalResult = data.result;
             
       // Update the HTML with detailed results
       document.getElementById('sumResult').innerText = `Sum of the numbers: ${sum}`;
       document.getElementById('primeResult').innerText = `Next prime number greater than the larger number: ${nextPrime}`;
-      document.getElementById('result').innerHTML = 'Result: ' + data.result;
+      document.getElementById('result').innerHTML = `Result: ${finalResult}`;
     } else {
       document.getElementById('result').innerHTML = 'Error: ' + data.error;
     }
