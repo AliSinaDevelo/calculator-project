@@ -50,3 +50,9 @@ def calculate(request):
             return JsonResponse({'error': 'Invalid Input'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid Request'}, status=405)
+
+
+def index(request):
+    # renders the index page
+    return render(request, 'index.html')
+
