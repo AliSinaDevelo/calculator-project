@@ -22,4 +22,29 @@ def next_prime(num) :
         prime += 1
     return prime
 
+def calculate(request):
+    # handles the POST request to Perform calculations
+    if request.method == "POST":
+        try:
+            # get input from the POST 
+            num1 = int(request.POST.get('num1'))
+            num2 = int(request.POST.get('num2'))
 
+            # calculate the sum
+            total_sum = num1 + num2
+
+            # find the maximum number
+            greater_num = max(num1, num2)
+
+            # find the next prime number
+            prime = next_prime(greater_num)
+
+            # add the prime number to the sum
+            result = total_sum + prime
+
+            # return the result as a JSON response
+            return JsonResponse({'result': result})
+        except(ValueError, TypeError):
+            return JsonResponse({'error': 'Invalid Input'}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid Request'}, status=405)
