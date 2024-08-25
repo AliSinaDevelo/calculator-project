@@ -1,8 +1,8 @@
-/* Reset some default browser styling */
+/* Apply global font styles */
 body, h1, p, input, button {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Use Roboto for the main font */
 }
 
 /* Style the body with a background color and center the content */
@@ -31,6 +31,7 @@ body {
 
 /* Style the heading */
 h1 {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for headings */
     font-size: 24px;
     margin-bottom: 20px;
     color: #333333;
@@ -48,6 +49,7 @@ input[type="number"] {
 
 /* Style the button */
 button {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for button text */
     width: 100%;
     padding: 10px;
     background-color: #007bff;
