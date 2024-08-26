@@ -66,7 +66,7 @@ To run the application, use the following command, then open your web browser an
 
 Example:
 - Input: `5` and `10`
-- Output: `18` (because 5 + 10 = 15, and the first prime number greater than 10 is 3, so 15 + 3 = 18)
+- Output: `28` (because 5 + 10 = 15, and the first prime number greater than 10 is 13, so 15 + 13 = 28)
 
 ## Technologies Used
 
